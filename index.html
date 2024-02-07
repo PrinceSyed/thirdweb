@@ -76,15 +76,15 @@
         var webcamStream;
 
         // Load thirdweb-unity-bridge.js asynchronously as soon as possible
-        async function loadThirdWebUnityBridge() {
-            try {
-                const thirdWebUnityBridge = await import('./lib/thirdweb-unity-bridge.js');
-                console.log("Thirdweb Unity Bridge loaded asynchronously.", thirdWebUnityBridge);
-            } catch (error) {
-                console.error("Failed to load Thirdweb Unity Bridge:", error);
-                ShowError("Failed to load necessary libraries.\n" + error);
-            }
-        }
+        // async function loadThirdWebUnityBridge() {
+        //     try {
+        //         const thirdWebUnityBridge = await import('./lib/thirdweb-unity-bridge.js');
+        //         console.log("Thirdweb Unity Bridge loaded asynchronously.", thirdWebUnityBridge);
+        //     } catch (error) {
+        //         console.error("Failed to load Thirdweb Unity Bridge:", error);
+        //         ShowError("Failed to load necessary libraries.\n" + error);
+        //     }
+        // }
 
         var initialize = async () => {
             var unityCanvas = document.querySelector("#unity-canvas");
@@ -111,7 +111,7 @@
         }
 
         // Start loading the thirdweb-unity-bridge.js as soon as possible
-        loadThirdWebUnityBridge();
+        // loadThirdWebUnityBridge();
 
         function StartAR() {
             var canvas = document.querySelector("#unity-canvas");
