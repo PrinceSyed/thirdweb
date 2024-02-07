@@ -78,8 +78,8 @@
         // Load thirdweb-unity-bridge.js asynchronously as soon as possible
         async function loadThirdWebUnityBridge() {
             try {
-                await import('./lib/thirdweb-unity-bridge.js');
-                console.log("Thirdweb Unity Bridge loaded asynchronously.");
+                const thirdWebUnityBridge = await import('./lib/thirdweb-unity-bridge.js');
+                console.log("Thirdweb Unity Bridge loaded asynchronously.", thirdWebUnityBridge);
             } catch (error) {
                 console.error("Failed to load Thirdweb Unity Bridge:", error);
                 ShowError("Failed to load necessary libraries.\n" + error);
@@ -101,8 +101,7 @@
             }
         };
 
-        // Start loading the thirdweb-unity-bridge.js as soon as possible
-        loadThirdWebUnityBridge();
+
 
         // Initialize AR and other setups when the document is ready
         if (document.readyState === 'complete' || document.readyState === 'interactive') {
@@ -110,6 +109,9 @@
         } else {
             document.addEventListener('DOMContentLoaded', initialize);
         }
+
+        // Start loading the thirdweb-unity-bridge.js as soon as possible
+        loadThirdWebUnityBridge();
 
         function StartAR() {
             var canvas = document.querySelector("#unity-canvas");
